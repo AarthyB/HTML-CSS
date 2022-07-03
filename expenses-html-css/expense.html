@@ -1,0 +1,36 @@
+<!---Put your code here--->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Note Expense</title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="top">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="expense.html" class="current">Note Expense</a>
+      </nav>
+    </header>
+    <div class="main-content">
+      <h2>Add a new item:</h2>
+      <label for="type">Type:</label
+      ><select>
+        <option value="Card">Card</option>
+        <option value="Cash">Cash</option>
+        <option value="Cryptocoin">Cryptocoin</option>
+        <option value="Other">Other</option></select
+      ><br />
+      <label for="Name">Name:</label><br />
+      <input type="text" id="Name" placeholder="What did you spend on?" /><br />
+      <label for="date">Date:</label><br />
+      <input type="date" id="date" /><br />
+      <label for="amount">Amount:</label><br />
+      <input type="number" id="Amount" placeholder="How much?" /><br />
+      <button type="submit">Add a new expense</button><br />
+    </div>
+    <footer>Copyright &copy; 2020 All Rights Reserved</footer>
+  </body>
+</html>
