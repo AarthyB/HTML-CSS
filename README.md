@@ -1,4 +1,4 @@
-## 🚀 My Projects
+## 🚀 HTML-CSS Projects
 
 ### 📁 File Uploader
 [![File Uploader](https://img.shields.io/badge/Live%20Demo-View-c8f04a?style=for-the-badge)](https://aarthyb.github.io/HTML-CSS/file-upload/index.html)
