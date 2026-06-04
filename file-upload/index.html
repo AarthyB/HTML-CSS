@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DropZone — File Uploader</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="logo">⬡ DropZone</div>
+      <span class="tagline">Drag. Drop. Done.</span>
+    </header>
+
+    <main class="uploader-card">
+
+      <!-- Drop Zone -->
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="16" width="48" height="36" rx="4" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M32 28 L32 44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M24 36 L32 28 L40 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 16 L20 12 C20 10.9 20.9 10 22 10 L42 10 C43.1 10 44 10.9 44 12 L44 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="drop-primary">Drop files here</p>
+        <p class="drop-secondary">or</p>
+        <button class="pick-btn" id="pickBtn">Browse Files</button>
+        <p class="drop-hint">Supports any file type · Max 50 MB each</p>
+        <input type="file" id="selectedFile" multiple hidden />
+      </div>
+
+      <!-- Controls bar -->
+      <div class="controls-bar">
+        <div class="filter-group">
+          <label>Filter:</label>
+          <select id="filterSelect">
+            <option value="all">All Files</option>
+            <option value="image">Images</option>
+            <option value="video">Video</option>
+            <option value="audio">Audio</option>
+            <option value="pdf">PDF</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="controls-right">
+          <button class="icon-btn" id="clearAllBtn" title="Clear all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
+            </svg>
+            Clear All
+          </button>
+          <button class="icon-btn accent" id="uploadAllBtn" title="Upload all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/>
+            </svg>
+            Upload All
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="stats-bar" id="statsBar" hidden>
+        <span id="statCount">0 files</span>
+        <span class="dot">·</span>
+        <span id="statSize">0 KB total</span>
+        <span class="dot">·</span>
+        <span id="statTypes"></span>
+      </div>
+
+      <!-- File List -->
+      <div class="file-list" id="fileList"></div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState">
+        <p>No files selected yet.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
